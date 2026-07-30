@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Checker</title>
+
+    <style>
+
+    body{
+        background-color:lightblue;
+        text-align:center;
+        font-family:Arial;
+    }
+
+    h1{
+        color:darkblue;
+    }
+
+    input{
+        padding:8px;
+    }
+
+    button{
+        background-color:green;
+        color:white;
+        padding:10px;
+    }
+
+    #result{
+        color:red;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Age Verification System</h1>
+
+<hr>
+
+<label>Enter Your Age</label>
+
+<br><br>
+
+<input type="number" id="age">
+
+<br><br>
+
+<button onclick="checkAge()">Check</button>
+
+<button onclick="clearData()">Clear</button>
+
+<hr>
+
+<h2 id="result"></h2>
+
+<script>
+
+function checkAge(){
+
+    var age=document.getElementById("age").value;
+
+    if(age==""){
+
+        document.getElementById("result").innerHTML=
+        "Please Enter Age";
+
+    }
+
+    else if(age>=18){
+
+        document.getElementById("result").innerHTML=
+        "You are an Adult ";
+
+    }
+
+    else{
+
+        document.getElementById("result").innerHTML=
+        "You are a Minor ";
+
+    }
+
+}
+
+function clearData(){
+
+    document.getElementById("age").value="";
+
+    document.getElementById("result").innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>
