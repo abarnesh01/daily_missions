@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Portal</title>
+</head>
+
+<body>
+
+    <center>
+
+    <h1>College Portal</h1>
+
+    <hr>
+
+    <a href="#">Home</a> |
+    <a href="#">About</a> |
+    <a href="#">Courses</a> |
+    <a href="#">Contact</a>
+
+    <hr>
+
+    <h2>About Us</h2>
+
+    <p>
+        Welcome to our College Portal.
+        Here you can register for different courses.
+    </p>
+
+    <hr>
+
+    <h2>Available Courses</h2>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Cyber Security</li>
+    </ul>
+
+    <hr>
+
+    <h2>Student Registration</h2>
+
+    <label>Student Name :</label>
+
+    <input type="text" id="name">
+
+    <br><br>
+
+    <label>Department :</label>
+
+    <select id="dept">
+        <option>CSE</option>
+        <option>IT</option>
+        <option>ECE</option>
+        <option>EEE</option>
+        <option>AI & DS</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="register()">Register</button>
+
+    <button onclick="clearForm()">Clear</button>
+
+    <hr>
+
+    <h2 id="result"></h2>
+
+    <hr>
+
+    <h3>Contact</h3>
+
+    <p>Email : college@gmail.com</p>
+
+    <p>Phone : 9876543210</p>
+
+    </center>
+
+<script>
+
+function register(){
+
+    var name=document.getElementById("name").value;
+
+    var dept=document.getElementById("dept").value;
+
+    if(name==""){
+
+        document.getElementById("result").innerHTML=
+        "Please Enter Your Name";
+
+    }
+
+    else{
+
+        document.getElementById("result").innerHTML=
+
+        "Welcome " + name +
+        "<br>Department : " + dept +
+        "<br>Registration Successful";
+
+    }
+
+}
+
+function clearForm(){
+
+    document.getElementById("name").value="";
+
+    document.getElementById("dept").selectedIndex=0;
+
+    document.getElementById("result").innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fun Generator</title>
+
+<style>
+body{
+    background-color:lightgreen;
+    text-align:center;
+    font-family:Arial;
+}
+
+button{
+    padding:10px;
+    background:blue;
+    color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>😂 Fun Generator 😂</h1>
+
+<p>Click the button to get a random fun message!</p>
+
+<button onclick="fun()">Generate</button>
+
+<h2 id="result"></h2>
+
+<script>
+
+function fun(){
+
+var msg=[
+
+"😂 Monday vandha odane weekend eppo nu yosipom!",
+
+"🍕 Saapadu patha diet nalaiku start panlam nu thonum!",
+
+"😴 Alarm adicha '5 minutes' nu solli 1 hour thoonguvom!",
+
+"📚 Exam ku munadi dhaan book open pannuvom!",
+
+"☕ Tea kudicha apram dhan work start aagum!",
+
+"🎮 10 minutes game nu start pannitu 2 hours aaidum!"
+
+];
+
+var random=Math.floor(Math.random()*msg.length);
+
+document.getElementById("result").innerHTML=msg[random];
+
+}
+
+</script>
+
+</body>
+</html>
