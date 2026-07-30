@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HexStrike Technologies</title>
+</head>
+
+<body>
+
+<center>
+
+<h1>HexStrike Technologies</h1>
+
+<p><b>Building Secure Digital Solutions</b></p>
+
+<hr>
+
+<a href="#">Home</a> |
+<a href="#">About</a> |
+<a href="#">Services</a> |
+<a href="#">Contact</a>
+
+<hr>
+
+<h2>About Us</h2>
+
+<p>
+HexStrike Technologies is an IT company that provides
+Web Development, Cyber Security and Artificial Intelligence solutions.
+</p>
+
+<hr>
+
+<h2>Our Services</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>Service</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Web Development</td>
+<td>Professional Website Development</td>
+</tr>
+
+<tr>
+<td>Cyber Security</td>
+<td>Network and Application Security</td>
+</tr>
+
+<tr>
+<td>Artificial Intelligence</td>
+<td>AI Based Smart Solutions</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Request a Callback</h2>
+
+<table>
+
+<tr>
+<td>Name :</td>
+<td><input type="text" id="name"></td>
+</tr>
+
+<tr>
+<td>Email :</td>
+<td><input type="email" id="email"></td>
+</tr>
+
+<tr>
+<td>Service :</td>
+<td>
+<select id="service">
+<option>Web Development</option>
+<option>Cyber Security</option>
+<option>AI Solutions</option>
+</select>
+</td>
+</tr>
+
+</table>
+
+<br>
+
+<button onclick="submitForm()">Submit</button>
+
+<button onclick="clearForm()">Clear</button>
+
+<h3 id="result"></h3>
+
+<hr>
+
+<h2>Contact</h2>
+
+<p>Email : info@hexstrike.com</p>
+<p>Phone : +91 9876543210</p>
+<p>Location : Coimbatore, Tamil Nadu</p>
+
+<hr>
+
+<p>© 2026 HexStrike Technologies. All Rights Reserved.</p>
+
+</center>
+
+<script>
+
+function submitForm(){
+
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var service=document.getElementById("service").value;
+
+if(name=="" || email==""){
+
+document.getElementById("result").innerHTML=
+"Please fill all the required fields.";
+
+}
+
+else{
+
+document.getElementById("result").innerHTML=
+"Thank You " + name +
+"! Your request for " + service +
+" has been submitted successfully.";
+
+}
+
+}
+
+function clearForm(){
+
+document.getElementById("name").value="";
+document.getElementById("email").value="";
+document.getElementById("service").selectedIndex=0;
+document.getElementById("result").innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>
