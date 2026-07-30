@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Website</title>
+</head>
+
+<body>
+
+    <h1>Student Portal</h1>
+
+    <hr>
+
+    <label>Enter Your Name:</label>
+    <br><br>
+
+    <input type="text" id="name">
+
+    <br><br>
+
+    <button onclick="welcome()">Submit</button>
+
+    <button onclick="clearData()">Clear</button>
+
+    <hr>
+
+    <h2 id="result"></h2>
+
+<script>
+
+function welcome(){
+
+    var username = document.getElementById("name").value;
+
+    if(username==""){
+
+        document.getElementById("result").innerHTML =
+        "Please Enter Your Name";
+
+    }
+    else{
+
+        document.getElementById("result").innerHTML =
+        "Welcome " + username + " 😊";
+
+    }
+
+}
+
+function clearData(){
+
+    document.getElementById("name").value="";
+
+    document.getElementById("result").innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>
