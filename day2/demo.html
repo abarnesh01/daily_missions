@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration</title>
+</head>
+
+<body>
+
+<center>
+
+<h1>Student Registration Form</h1>
+
+<hr>
+
+<form onsubmit="return validateForm()">
+
+<table>
+
+<tr>
+<td>Name</td>
+<td><input type="text" id="name"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="text" id="email"></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" id="password"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" id="male">Male
+<input type="radio" name="gender" id="female">Female
+</td>
+</tr>
+
+<tr>
+<td>Department</td>
+<td>
+<select id="dept">
+<option value="">Select Department</option>
+<option>CSE</option>
+<option>IT</option>
+<option>ECE</option>
+<option>AI & DS</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td><input type="text" id="phone"></td>
+</tr>
+
+</table>
+
+<br>
+
+<input type="submit" value="Register">
+
+<input type="reset" value="Clear">
+
+</form>
+
+<hr>
+
+<h2 id="result"></h2>
+
+</center>
+
+<script>
+
+function validateForm(){
+
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var password=document.getElementById("password").value;
+var dept=document.getElementById("dept").value;
+var phone=document.getElementById("phone").value;
+
+if(name==""){
+
+alert("Enter Your Name");
+return false;
+
+}
+
+if(email==""){
+
+alert("Enter Your Email");
+return false;
+
+}
+
+if(email.indexOf("@")==-1 || email.indexOf(".")==-1){
+
+alert("Invalid Email");
+return false;
+
+}
+
+if(password==""){
+
+alert("Enter Password");
+return false;
+
+}
+
+if(password.length<6){
+
+alert("Password must contain at least 6 characters");
+return false;
+
+}
+
+if(!(document.getElementById("male").checked ||
+document.getElementById("female").checked)){
+
+alert("Select Gender");
+return false;
+
+}
+
+if(dept==""){
+
+alert("Select Department");
+return false;
+
+}
+
+if(phone==""){
+
+alert("Enter Phone Number");
+return false;
+
+}
+
+if(phone.length!=10){
+
+alert("Phone Number must contain 10 digits");
+return false;
+
+}
+
+document.getElementById("result").innerHTML=
+"Registration Successful! Welcome " + name;
+
+return false;
+
+}
+
+</script>
+
+</body>
+
+</html>
