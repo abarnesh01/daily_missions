@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Job Application Portal</title>
+</head>
+
+<body>
+
+<center>
+
+<h1>Job Application Portal</h1>
+
+<p>Apply for Your Dream Job</p>
+
+<hr>
+
+<a href="#">Home</a> |
+<a href="#">Jobs</a> |
+<a href="#">About</a> |
+<a href="#">Contact</a>
+
+<hr>
+
+<h2>Application Form</h2>
+
+<form name="jobForm" onsubmit="return validateForm()">
+
+<table>
+
+<tr>
+<td>Full Name</td>
+<td><input type="text" name="fullname"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="text" name="email"></td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td><input type="text" name="phone"></td>
+</tr>
+
+<tr>
+<td>Qualification</td>
+<td>
+<select name="qualification">
+<option value="">Select</option>
+<option>B.E</option>
+<option>B.Tech</option>
+<option>B.Sc</option>
+<option>MCA</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Experience</td>
+<td>
+<input type="radio" name="exp" value="Fresher">Fresher
+<input type="radio" name="exp" value="Experienced">Experienced
+</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" name="password"></td>
+</tr>
+
+</table>
+
+<br>
+
+<input type="submit" value="Apply">
+
+<input type="reset" value="Clear">
+
+</form>
+
+<hr>
+
+<h3>Contact</h3>
+
+<p>Email : careers@company.com</p>
+<p>Phone : +91 9876543210</p>
+
+</center>
+
+<script>
+
+function validateForm(){
+
+var form = document.forms["jobForm"];
+
+if(form.fullname.value==""){
+alert("Enter Full Name");
+return false;
+}
+
+if(form.email.value==""){
+alert("Enter Email");
+return false;
+}
+
+if(form.email.value.indexOf("@")==-1 || form.email.value.indexOf(".")==-1){
+alert("Invalid Email");
+return false;
+}
+
+if(form.phone.value==""){
+alert("Enter Phone Number");
+return false;
+}
+
+if(form.phone.value.length!=10){
+alert("Phone Number must be 10 digits");
+return false;
+}
+
+if(form.qualification.value==""){
+alert("Select Qualification");
+return false;
+}
+
+if(form.exp[0].checked==false && form.exp[1].checked==false){
+alert("Select Experience");
+return false;
+}
+
+if(form.password.value.length<6){
+alert("Password must contain at least 6 characters");
+return false;
+}
+
+alert("Application Submitted Successfully");
+
+return true;
+
+}
+
+</script>
+
+</body>
+</html>

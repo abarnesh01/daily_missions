@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>City Care Hospital</title>
+</head>
+
+<body>
+
+<center>
+
+<h1>🏥 City Care Hospital</h1>
+
+<p><b>Your Health, Our Priority</b></p>
+
+<hr>
+
+<a href="#">Home</a> |
+<a href="#">Doctors</a> |
+<a href="#">Departments</a> |
+<a href="#">Appointment</a> |
+<a href="#">Contact</a>
+
+<hr>
+
+<h2>About Hospital</h2>
+
+<p>
+City Care Hospital provides 24/7 emergency services,
+specialist doctors, laboratory facilities and online
+appointment booking.
+</p>
+
+<hr>
+
+<h2>Departments</h2>
+
+<ul>
+<li>General Medicine</li>
+<li>Cardiology</li>
+<li>Orthopedics</li>
+<li>Pediatrics</li>
+<li>Neurology</li>
+<li>Dermatology</li>
+</ul>
+
+<hr>
+
+<h2>Book an Appointment</h2>
+
+<form name="hospitalForm" onsubmit="return validateForm()">
+
+<table>
+
+<tr>
+<td>Patient Name</td>
+<td><input type="text" name="name"></td>
+</tr>
+
+<tr>
+<td>Age</td>
+<td><input type="number" name="age"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender">Male
+<input type="radio" name="gender">Female
+</td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td><input type="text" name="phone"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="text" name="email"></td>
+</tr>
+
+<tr>
+<td>Department</td>
+<td>
+<select name="department">
+<option value="">Select Department</option>
+<option>General Medicine</option>
+<option>Cardiology</option>
+<option>Orthopedics</option>
+<option>Pediatrics</option>
+<option>Neurology</option>
+<option>Dermatology</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Appointment Date</td>
+<td><input type="date" name="date"></td>
+</tr>
+
+<tr>
+<td>Symptoms</td>
+<td><textarea name="symptoms"></textarea></td>
+</tr>
+
+</table>
+
+<br>
+
+<input type="submit" value="Book Appointment">
+
+<input type="reset" value="Clear">
+
+</form>
+
+<hr>
+
+<h2>Hospital Timings</h2>
+
+<table border="1" cellpadding="8">
+
+<tr>
+<th>Department</th>
+<th>Timing</th>
+</tr>
+
+<tr>
+<td>General Medicine</td>
+<td>9 AM - 5 PM</td>
+</tr>
+
+<tr>
+<td>Cardiology</td>
+<td>10 AM - 4 PM</td>
+</tr>
+
+<tr>
+<td>Pediatrics</td>
+<td>9 AM - 3 PM</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Contact Us</h2>
+
+<p>Email : support@citycarehospital.com</p>
+
+<p>Phone : +91 9876543210</p>
+
+<p>Address : Coimbatore, Tamil Nadu</p>
+
+<hr>
+
+<p>© 2026 City Care Hospital. All Rights Reserved.</p>
+
+</center>
+
+<script>
+
+function validateForm(){
+
+var f=document.forms["hospitalForm"];
+
+if(f.name.value==""){
+alert("Please Enter Patient Name");
+return false;
+}
+
+if(f.age.value==""){
+alert("Please Enter Age");
+return false;
+}
+
+if(f.gender[0].checked==false && f.gender[1].checked==false){
+alert("Please Select Gender");
+return false;
+}
+
+if(f.phone.value.length!=10){
+alert("Phone Number must contain 10 digits");
+return false;
+}
+
+if(f.email.value.indexOf("@")==-1 || f.email.value.indexOf(".")==-1){
+alert("Enter Valid Email");
+return false;
+}
+
+if(f.department.value==""){
+alert("Select Department");
+return false;
+}
+
+if(f.date.value==""){
+alert("Select Appointment Date");
+return false;
+}
+
+if(f.symptoms.value==""){
+alert("Enter Symptoms");
+return false;
+}
+
+alert("Appointment Booked Successfully!");
+
+return true;
+
+}
+
+</script>
+
+</body>
+
+</html>
