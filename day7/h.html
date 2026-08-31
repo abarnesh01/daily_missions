@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Exam</title>
+</head>
+
+<body>
+
+<h2>Online Examination System</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<br><br>
+
+<div id="exam">
+    <p id="question"></p>
+
+    <input type="radio" name="ans" value="A" id="a">
+    <label id="opA"></label><br>
+
+    <input type="radio" name="ans" value="B" id="b">
+    <label id="opB"></label><br>
+
+    <input type="radio" name="ans" value="C" id="c">
+    <label id="opC"></label><br>
+
+    <input type="radio" name="ans" value="D" id="d">
+    <label id="opD"></label><br><br>
+
+    <button onclick="nextQuestion()">Next</button>
+</div>
+
+<h3 id="result"></h3>
+
+<script>
+
+let questions = [
+    {
+        q: "Which language is used for web scripting?",
+        options: ["HTML", "JavaScript", "CSS", "XML"],
+        answer: "B"
+    },
+    {
+        q: "Which tag creates a paragraph?",
+        options: ["<p>", "<h1>", "<br>", "<table>"],
+        answer: "A"
+    },
+    {
+        q: "Which is used to style HTML?",
+        options: ["Java", "Python", "CSS", "SQL"],
+        answer: "C"
+    }
+];
+
+let i = 0;
+let score = 0;
+
+function showQuestion() {
+
+    document.getElementById("question").innerHTML =
+        (i + 1) + ". " + questions[i].q;
+
+    document.getElementById("opA").innerHTML =
+        questions[i].options[0];
+
+    document.getElementById("opB").innerHTML =
+        questions[i].options[1];
+
+    document.getElementById("opC").innerHTML =
+        questions[i].options[2];
+
+    document.getElementById("opD").innerHTML =
+        questions[i].options[3];
+}
+
+function nextQuestion() {
+
+    let answer = document.querySelector(
+        'input[name="ans"]:checked'
+    );
+
+    if (answer && answer.value == questions[i].answer) {
+        score++;
+    }
+
+    i++;
+
+    if (i < questions.length) {
+        showQuestion();
+    }
+    else {
+        document.getElementById("exam").innerHTML =
+            "Exam Completed";
+
+        document.getElementById("result").innerHTML =
+            "Your Score = " + score + "/" + questions.length;
+    }
+}
+
+showQuestion();
+
+</script>
+
+</body>
+</html>
