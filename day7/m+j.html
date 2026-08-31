@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Student Details</h2>
+
+<div id="result"></div>
+
+<script>
+
+let xml = `
+<students>
+
+    <student>
+        <name>Arun</name>
+        <mark>85</mark>
+    </student>
+
+    <student>
+        <name>Rahul</name>
+        <mark>90</mark>
+    </student>
+
+    <student>
+        <name>Priya</name>
+        <mark>78</mark>
+    </student>
+
+    <student>
+        <name>Kavin</name>
+        <mark>88</mark>
+    </student>
+
+    <student>
+        <name>Divya</name>
+        <mark>95</mark>
+    </student>
+
+</students>
+`;
+
+let parser = new DOMParser();
+
+let doc = parser.parseFromString(xml, "text/xml");
+
+let students = doc.getElementsByTagName("student");
+
+let output = "";
+
+for (let i = 0; i < students.length; i++) {
+
+    let name = students[i]
+        .getElementsByTagName("name")[0]
+        .textContent;
+
+    let mark = students[i]
+        .getElementsByTagName("mark")[0]
+        .textContent;
+
+    output += "Name: " + name +
+              " - Mark: " + mark + "<br>";
+}
+
+document.getElementById("result").innerHTML = output;
+
+</script>
+
+</body>
+</html>
