@@ -1,82 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xsl:stylesheet version="1.0"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet
+    version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-<xsl:template match="/">
+    <xsl:template match="/">
 
-<html>
+        <html>
+            <head>
+                <title>Student Portal</title>
+            </head>
 
-<head>
+            <body bgcolor="lightblue">
 
-<title>Student Portal</title>
+                <center>
 
-</head>
+                    <h1>Student Portal</h1>
 
-<body bgcolor="lightblue">
+                    <hr/>
 
-<center>
+                    <table border="1" cellpadding="15">
 
-<h1>🎓 Student Portal</h1>
+                        <tr bgcolor="blue">
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Year</th>
+                        </tr>
 
-<p>Student Information System</p>
+                        <xsl:for-each select="students/student">
 
-<hr/>
+                            <tr>
 
-<table border="1" cellpadding="15">
+                                <td>
+                                    <xsl:value-of select="id"/>
+                                </td>
 
-<tr bgcolor="navy">
+                                <td>
+                                    <xsl:value-of select="name"/>
+                                </td>
 
-<th><font color="white">ID</font></th>
-<th><font color="white">Name</font></th>
-<th><font color="white">Department</font></th>
-<th><font color="white">Year</font></th>
+                                <td>
+                                    <xsl:value-of select="department"/>
+                                </td>
 
-</tr>
+                                <td>
+                                    <xsl:value-of select="year"/>
+                                </td>
 
-<xsl:for-each select="students/student">
+                            </tr>
 
-<tr>
+                        </xsl:for-each>
 
-<td>
-<xsl:value-of select="id"/>
-</td>
+                    </table>
 
-<td>
-<xsl:value-of select="name"/>
-</td>
+                    <br/>
 
-<td>
-<xsl:value-of select="department"/>
-</td>
+                    <h3>
+                        Total Students:
+                        <xsl:value-of select="count(students/student)"/>
+                    </h3>
 
-<td>
-<xsl:value-of select="year"/>
-</td>
+                </center>
 
-</tr>
+            </body>
+        </html>
 
-</xsl:for-each>
-
-</table>
-
-<br/>
-
-<h3>
-Total Students:
-<xsl:value-of select="count(students/student)"/>
-</h3>
-
-<hr/>
-
-<p>© 2026 Student Portal</p>
-
-</center>
-
-</body>
-
-</html>
-
-</xsl:template>
+    </xsl:template>
 
 </xsl:stylesheet>
