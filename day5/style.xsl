@@ -1,89 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <xsl:template match="/">
+<xsl:template match="/">
 
-        <html>
+<html>
 
-        <head>
-            <title>Student Portal</title>
-        </head>
+<head>
 
-        <body bgcolor="lightblue">
+<title>Student Portal</title>
 
-            <center>
+</head>
 
-                <h1>🎓 Student Portal</h1>
+<body bgcolor="lightblue">
 
-                <p>Student Information System</p>
+<center>
 
-                <hr/>
+<h1>🎓 Student Portal</h1>
 
-                <table border="1" cellpadding="15">
+<p>Student Information System</p>
 
-                    <tr bgcolor="navy">
-                        <th>
-                            <font color="white">ID</font>
-                        </th>
+<hr/>
 
-                        <th>
-                            <font color="white">Name</font>
-                        </th>
+<table border="1" cellpadding="15">
 
-                        <th>
-                            <font color="white">Department</font>
-                        </th>
+<tr bgcolor="navy">
 
-                        <th>
-                            <font color="white">Year</font>
-                        </th>
-                    </tr>
+<th><font color="white">ID</font></th>
+<th><font color="white">Name</font></th>
+<th><font color="white">Department</font></th>
+<th><font color="white">Year</font></th>
 
-                    <xsl:for-each select="students/student">
+</tr>
 
-                        <tr>
+<xsl:for-each select="students/student">
 
-                            <td>
-                                <xsl:value-of select="id"/>
-                            </td>
+<tr>
 
-                            <td>
-                                <xsl:value-of select="name"/>
-                            </td>
+<td>
+<xsl:value-of select="id"/>
+</td>
 
-                            <td>
-                                <xsl:value-of select="department"/>
-                            </td>
+<td>
+<xsl:value-of select="name"/>
+</td>
 
-                            <td>
-                                <xsl:value-of select="year"/>
-                            </td>
+<td>
+<xsl:value-of select="department"/>
+</td>
 
-                        </tr>
+<td>
+<xsl:value-of select="year"/>
+</td>
 
-                    </xsl:for-each>
+</tr>
 
-                </table>
+</xsl:for-each>
 
-                <br/>
+</table>
 
-                <p>
-                    Total Students:
-                    <xsl:value-of select="count(students/student)"/>
-                </p>
+<br/>
 
-                <hr/>
+<h3>
+Total Students:
+<xsl:value-of select="count(students/student)"/>
+</h3>
 
-                <p>© 2026 Student Portal</p>
+<hr/>
 
-            </center>
+<p>© 2026 Student Portal</p>
 
-        </body>
+</center>
 
-        </html>
+</body>
 
-    </xsl:template>
+</html>
+
+</xsl:template>
 
 </xsl:stylesheet>
